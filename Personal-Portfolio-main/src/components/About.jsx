@@ -1,4 +1,4 @@
-import { clients, services } from "../lib/constant";
+import { services } from "../lib/constant";
 
 const About = () => {
   return (
@@ -18,18 +18,6 @@ const About = () => {
                 <h4 className="h4 service-item-title">{service.title}</h4>
                 <p className="service-item-text">{service.description}</p>
               </div>
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className="clients">
-        <h3 className="h3 clients-title">Clients</h3>
-        <ul className="clients-list has-scrollbar">
-          {clients.map((logo, index) => (
-            <li className="clients-item" key={index}>
-              <a href="#">
-                <img src={logo} alt={`Client logo ${index + 1}`} />
-              </a>
             </li>
           ))}
         </ul>

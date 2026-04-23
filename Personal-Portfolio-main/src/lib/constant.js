@@ -27,10 +27,10 @@ const testimonials = [
 
 const services = [
   {
-    title: "Web Design",
+    title: "Full-stack Development",
     icon: "https://img.icons8.com/pastel-glyph/64/40C057/web-design--v1.png",
     description:
-      "The most modern and high-quality design made at a professional level.",
+      "End-to-end development of modern web applications with both frontend and backend expertise.",
   },
   {
     title: "Web Development",
@@ -38,16 +38,16 @@ const services = [
     description: "High-quality development of sites at the professional level.",
   },
   {
-    title: "Mobile Apps",
+    title: "Frontend Development",
     icon: "https://img.icons8.com/pastel-glyph/64/40C057/mobile-taxi-service.png",
     description:
-      "Professional development of applications for iOS and Android.",
+      "Creating responsive and interactive user interfaces with modern frameworks.",
   },
   {
-    title: "Photography",
+    title: "Backend Development",
     icon: "https://img.icons8.com/pastel-glyph/64/40C057/camera.png",
     description:
-      "I make high-quality photos of any category at a professional level.",
+      "Building robust server-side applications, APIs, and database architectures.",
   },
 ];
 
