@@ -4,7 +4,6 @@ import About from "./About";
 import Navbar from "./Navbar";
 import Resume from "./Resume";
 import Portfolio from "./Portfolio";
-import Blog from "./Blog";
 import Contact from "./Contact";
 
 const Content = () => {
@@ -18,7 +17,6 @@ const Content = () => {
       {activeSection === "About" && <About />}
       {activeSection === "Resume" && <Resume />}
       {activeSection === "Portfolio" && <Portfolio />}
-      {activeSection === "Blog" && <Blog />}
       {activeSection === "Contact" && <Contact />}
     </div>
   );

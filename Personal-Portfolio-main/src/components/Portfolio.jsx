@@ -5,11 +5,19 @@ const Portfolio = () => {
   const categories = ["All", "Web Design", "Applications", "Web Development"];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [expandedProjects, setExpandedProjects] = useState({});
 
   const filteredProjects =
     selectedCategory === "All"
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
+
+  const toggleDescription = (index) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   return (
     <article className="portfolio">
@@ -41,7 +49,31 @@ const Portfolio = () => {
                   <img src={project.img} alt={project.title} loading="lazy" />
                 </figure>
                 <h3 className="project-title">{project.title}</h3>
-                <p className="project-category">{project.category}</p>
+                {project.description && (
+                  <div>
+                    <p className={`project-description ${expandedProjects[index] ? 'expanded' : ''}`}>
+                      {project.description}
+                    </p>
+                    <button 
+                      className="see-more-btn"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleDescription(index);
+                      }}
+                    >
+                      {expandedProjects[index] ? 'Show Less' : 'See More'}
+                    </button>
+                  </div>
+                )}
+                {project.techStack && (
+                  <div className="project-tech-stack">
+                    {project.techStack.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-badge">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </a>
             </li>
           ))}

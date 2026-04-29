@@ -62,10 +62,11 @@ const clients = [
 
 const projects = [
   {
-    title: "Finance",
+    title: "PharmaCare - Pharmacy Management System",
     category: "Web Development",
     img: "https://i.postimg.cc/qRHpHMyd/project-1.jpg",
-    techStack: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS", "Chart.js"],
+    techStack: ["Next.js 14", "React 19", "TypeScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "Vercel", "Render"],
+    description: "A full-stack web application designed to manage pharmacy operations. It handles medicine inventory, sales tracking, customer management, prescriptions, supplier management, and provides analytics through a dashboard with real-time metrics. Key features include: Medicine inventory management with batch tracking and expiry alerts, Sales and purchase order processing, Customer and supplier management, Prescription handling, Role-based access control (Head Pharmacist, Counter Staff, Inventory Manager), Dashboard with sales trends, top medicines, and KPIs, Audit logging and notifications.",
   },
   {
     title: "Orizon",

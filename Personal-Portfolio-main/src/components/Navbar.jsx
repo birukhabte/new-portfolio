@@ -35,16 +35,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <li className="navbar-item">
           <button
             className={`navbar-link ${
-              activeSection === "Blog" ? "navbarActive" : ""
-            }`}
-            onClick={() => setActiveSection("Blog")}
-          >
-            Blog
-          </button>
-        </li>
-        <li className="navbar-item">
-          <button
-            className={`navbar-link ${
               activeSection === "Contact" ? "navbarActive" : ""
             }`}
             onClick={() => setActiveSection("Contact")}

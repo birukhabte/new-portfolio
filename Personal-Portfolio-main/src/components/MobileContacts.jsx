@@ -11,7 +11,7 @@ const MobileContacts = () => {
           <div className="contact-info">
             <p className="contact-title">Email</p>
             <a href="mailto:raro@example.com" className="contact-link">
-              raro@example.com
+              habtebiruk13@gmail.com
             </a>
           </div>
         </li>
@@ -23,18 +23,8 @@ const MobileContacts = () => {
           <div className="contact-info">
             <p className="contact-title">Phone</p>
             <a href="tel:+12133522795" className="contact-link">
-              +1 (213) 352-2795
+              0995871152
             </a>
-          </div>
-        </li>
-
-        <li className="contact-item">
-          <div className="icon-box">
-            <ion-icon name="calendar-outline"></ion-icon>
-          </div>
-          <div className="contact-info">
-            <p className="contact-title">Birthday</p>
-            <time dateTime="1982-06-23">June 23, 1982</time>
           </div>
         </li>
 
@@ -44,7 +34,7 @@ const MobileContacts = () => {
           </div>
           <div className="contact-info">
             <p className="contact-title">Location</p>
-            <address>Sacramento, California, USA</address>
+            <address>Addis Ababa, Ethiopia</address>
           </div>
         </li>
       </ul>
@@ -53,18 +43,13 @@ const MobileContacts = () => {
 
       <ul className="social-list">
         <li className="social-item">
-          <a href="#" className="social-link">
-            <ion-icon name="logo-facebook"></ion-icon>
+          <a href="https://github.com/birukhabte" className="social-link" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="logo-github"></ion-icon>
           </a>
         </li>
         <li className="social-item">
-          <a href="#" className="social-link">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
-        </li>
-        <li className="social-item">
-          <a href="#" className="social-link">
-            <ion-icon name="logo-instagram"></ion-icon>
+          <a href="https://t.me/Web_developer13" className="social-link" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="paper-plane-outline"></ion-icon>
           </a>
         </li>
       </ul>
