@@ -64,9 +64,32 @@ const projects = [
   {
     title: "PharmaCare - Pharmacy Management System",
     category: "Web Development",
-    img: "https://i.postimg.cc/qRHpHMyd/project-1.jpg",
+    img: "/pharma/pharmalogin.png",
+    images: [
+      "/pharma/pharmalogin.png",
+      "/pharma/pharmadashboard.png",
+      "/pharma/pharmainventory.png",
+      "/pharma/pharmasales.png"
+    ],
     techStack: ["Next.js 14", "React 19", "TypeScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "Vercel", "Render"],
     description: "A full-stack web application designed to manage pharmacy operations. It handles medicine inventory, sales tracking, customer management, prescriptions, supplier management, and provides analytics through a dashboard with real-time metrics. Key features include: Medicine inventory management with batch tracking and expiry alerts, Sales and purchase order processing, Customer and supplier management, Prescription handling, Role-based access control (Head Pharmacist, Counter Staff, Inventory Manager), Dashboard with sales trends, top medicines, and KPIs, Audit logging and notifications.",
+    githubLink: "https://github.com/birukhabte/pharma_Care.git",
+    liveLink: "https://pharmacare-ashy.vercel.app/dashboard",
+  },
+  {
+    title: "Home Luxury Furniture",
+    category: "Web Development",
+    img: "/furniture/fur1.png",
+    images: [
+      "/furniture/fur1.png",
+      "/furniture/fur2.png",
+      "/furniture/fur3.png",
+      "/furniture/fur4.png"
+    ],
+    techStack: ["React", "TypeScript", "NestJS", "MongoDB", "Docker"],
+    description: "Home Luxury Furniture is an e-commerce platform for selling luxury furniture online. Customers can browse products (Arabian Majlis, sofas, TV stands), add items to their cart, and complete purchases using Chapa payment gateway. The system includes an admin panel for managing products, orders, promotions, and customer inquiries.",
+    githubLink: "https://github.com/birukhabte/home-luxury.git",
+    liveLink: "https://home-luxury.vercel.app/",
   },
   {
     title: "Orizon",
