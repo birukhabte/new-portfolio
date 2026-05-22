@@ -92,52 +92,31 @@ const projects = [
     liveLink: "https://home-luxury.vercel.app/",
   },
   {
-    title: "Orizon",
+    title: "Learn Coding",
     category: "Web Development",
-    img: "https://i.postimg.cc/bNrcM2Wt/project-2.png",
-    techStack: ["React", "TypeScript", "Firebase"],
+    img: "/code learn/code1.png",
+    images: [
+      "/code learn/code1.png",
+      "/code learn/code2.png"
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Firebase"],
+    description: "An interactive platform for learning programming and coding skills.",
+    githubLink: "https://github.com/birukhabte/learn-coding",
+    liveLink: "https://learn-coding-sand.vercel.app/",
   },
   {
-    title: "Fundo",
-    category: "Web Design",
-    img: "https://i.postimg.cc/jSJVqYsq/project-3.jpg",
-    techStack: ["Figma", "Adobe XD", "Photoshop"],
-  },
-  {
-    title: "Brawlhalla",
-    category: "Applications",
-    img: "https://i.postimg.cc/dtpXxNGb/project-4.png",
-    techStack: ["React Native", "Redux", "Firebase"],
-  },
-  {
-    title: "DSM.",
-    category: "Web Design",
-    img: "https://i.postimg.cc/43T0JKLw/project-5.png",
-    techStack: ["Figma", "Sketch", "InVision"],
-  },
-  {
-    title: "Metaspark",
-    category: "Web Design",
-    img: "https://i.postimg.cc/qR1DX1kZ/project-6.png",
-    techStack: ["Figma", "Adobe Illustrator"],
-  },
-  {
-    title: "Summary",
+    title: "AddisCampus",
     category: "Web Development",
-    img: "https://i.postimg.cc/Kj4q9tjc/project-7.png",
-    techStack: ["Vue.js", "Vuex", "Sass", "Webpack"],
-  },
-  {
-    title: "Task Manager",
-    category: "Applications",
-    img: "https://i.postimg.cc/rw2j4B1w/project-8.jpg",
-    techStack: ["Flutter", "Dart", "SQLite"],
-  },
-  {
-    title: "Arrival",
-    category: "Web Development",
-    img: "https://i.postimg.cc/7LxNsSQv/project-9.png",
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma"],
+    img: "/campus/cam1.png",
+    images: [
+      "/campus/cam1.png",
+      "/campus/cam2.png",
+      "/campus/cam3.png"
+    ],
+    techStack: ["React", "Node.js/Express", "MongoDB", "AI content generation", "Firebase"],
+    description: "CampusSync is a comprehensive campus community platform that helps students connect and collaborate. It includes: Lost & Found, Marketplace, AI Notes, AI Interview Practice, Real-time Chat, and User Profiles.",
+    githubLink: "https://github.com/birukhabte/AddisSync.git",
+    liveLink: "https://addissync.vercel.app/",
   },
 ];
 

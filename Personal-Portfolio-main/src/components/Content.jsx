@@ -3,6 +3,7 @@ import { useState } from "react";
 import About from "./About";
 import Navbar from "./Navbar";
 import Resume from "./Resume";
+import Skills from "./Skills";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
 
@@ -16,6 +17,7 @@ const Content = () => {
       />
       {activeSection === "About" && <About />}
       {activeSection === "Resume" && <Resume />}
+      {activeSection === "Skills" && <Skills />}
       {activeSection === "Portfolio" && <Portfolio />}
       {activeSection === "Contact" && <Contact />}
     </div>

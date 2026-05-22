@@ -7,6 +7,7 @@ const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [expandedProjects, setExpandedProjects] = useState({});
   const [currentImageIndex, setCurrentImageIndex] = useState({});
+  const [zoomLevels, setZoomLevels] = useState({});
 
   const filteredProjects =
     selectedCategory === "All"
@@ -17,6 +18,22 @@ const Portfolio = () => {
     setExpandedProjects(prev => ({
       ...prev,
       [index]: !prev[index]
+    }));
+  };
+
+  const handleZoomIn = (index, e) => {
+    e.stopPropagation();
+    setZoomLevels(prev => ({
+      ...prev,
+      [index]: Math.min((prev[index] || 1) + 0.25, 3)
+    }));
+  };
+
+  const handleZoomOut = (index, e) => {
+    e.stopPropagation();
+    setZoomLevels(prev => ({
+      ...prev,
+      [index]: Math.max((prev[index] || 1) - 0.25, 1)
     }));
   };
 
@@ -62,6 +79,7 @@ const Portfolio = () => {
             const displayImage = project.images 
               ? project.images[currentImageIndex[index] || 0]
               : project.img;
+            const zoomLevel = zoomLevels[index] || 1;
             
             return (
               <li key={index} className="">
@@ -70,7 +88,12 @@ const Portfolio = () => {
                     <div className="project-item-icon-box">
                       <ion-icon name="eye-outline"></ion-icon>
                     </div>
-                    <img src={displayImage} alt={project.title} loading="lazy" />
+                    <img
+                      src={displayImage}
+                      alt={project.title}
+                      loading="lazy"
+                      style={{ transform: `scale(${zoomLevel})`, transformOrigin: 'center center' }}
+                    />
                     {project.images && project.images.length > 1 && (
                       <div className="image-indicators">
                         {project.images.map((_, imgIndex) => (
@@ -81,6 +104,24 @@ const Portfolio = () => {
                         ))}
                       </div>
                     )}
+                    <div className="zoom-controls">
+                      <button
+                        className="zoom-btn"
+                        onClick={(e) => handleZoomIn(index, e)}
+                        title="Zoom In"
+                        disabled={zoomLevel >= 3}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="zoom-btn"
+                        onClick={(e) => handleZoomOut(index, e)}
+                        title="Zoom Out"
+                        disabled={zoomLevel <= 1}
+                      >
+                        −
+                      </button>
+                    </div>
                     <div className="project-hover-links">
                       {project.githubLink && (
                         <a 
@@ -145,3 +186,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+

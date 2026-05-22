@@ -28,7 +28,7 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="sidebar-info">
         <figure className="avatar-box">
-          <img src="/logo.png" alt="avatar" width="80" />
+          <img src="/icon image.png" alt="avatar" width="80" />
         </figure>
         <div className="info-content">
           <h1 className="name">Biruk Habte</h1>
@@ -104,10 +104,27 @@ const Sidebar = () => {
 
         <div className="separator"></div>
 
-        <a href="/resume.pdf" download className="download-resume-btn">
+        <button
+          className="download-resume-btn"
+          onClick={(e) => {
+            e.preventDefault();
+            fetch("/Biruk's R esume.pdf")
+              .then(res => res.blob())
+              .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "Biruk_Habte_Resume.pdf";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+              });
+          }}
+        >
           <ion-icon name="download-outline"></ion-icon>
           <span>Download Resume</span>
-        </a>
+        </button>
       </div>
     </aside>
   );
