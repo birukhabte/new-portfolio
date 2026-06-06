@@ -302,6 +302,8 @@ article {
   font-weight: var(--fw500);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
+  font-family: var(--ff-genos);
+  text-transform: capitalize;
 }
 
 .info-content .title {
