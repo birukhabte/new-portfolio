@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd Personal-Portfolio-main && npm run build",
+  "outputDirectory": "Personal-Portfolio-main/dist",
+  "framework": "vite",
+  "devCommand": "cd Personal-Portfolio-main && npm run dev",
+  "installCommand": "cd Personal-Portfolio-main && npm install"
+}
