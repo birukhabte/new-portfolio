@@ -39,7 +39,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             }`}
             onClick={() => setActiveSection("Portfolio")}
           >
-            Portfolio
+            Projects
           </button>
         </li>
         <li className="navbar-item">
