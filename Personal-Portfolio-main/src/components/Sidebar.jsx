@@ -108,7 +108,7 @@ const Sidebar = () => {
           className="download-resume-btn"
           onClick={(e) => {
             e.preventDefault();
-            fetch("/BIruk_Habte_CV_Fr.pdf")
+            fetch("/Biruk_Habte_CV_Fr.pdf")
               .then(res => res.blob())
               .then(blob => {
                 const url = window.URL.createObjectURL(blob);
