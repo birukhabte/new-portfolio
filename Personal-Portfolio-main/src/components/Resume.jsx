@@ -1,8 +1,32 @@
 const Resume = () => {
+  const handleDownloadResume = (e) => {
+    e.preventDefault();
+    fetch("/fresume_updated.pdf")
+      .then(res => res.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "fresume_updated.pdf";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      });
+  };
+
   return (
     <article className="resume">
-      <header>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 className="h2 article-title">Resume</h2>
+        <button
+          className="download-resume-btn"
+          onClick={handleDownloadResume}
+          style={{ marginTop: 0 }}
+        >
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download Resume</span>
+        </button>
       </header>
       <section className="timeline">
         <div className="title-wrapper">
