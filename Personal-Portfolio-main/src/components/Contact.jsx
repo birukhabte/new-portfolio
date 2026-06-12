@@ -7,6 +7,22 @@ const Contact = () => {
 
   const endpoint = "https://formspree.io/f/xeedkqjq";
 
+  const handleDownloadResume = (e) => {
+    e.preventDefault();
+    fetch("/BirukCv_main%20(8).pdf")
+      .then(res => res.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "BirukCv_main(8).pdf";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
@@ -46,8 +62,16 @@ const Contact = () => {
 
   return (
     <article className="contact">
-      <header>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 className="h2 article-title">Contact</h2>
+        <button
+          className="download-resume-btn"
+          onClick={handleDownloadResume}
+          style={{ marginTop: 0 }}
+        >
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download Resume</span>
+        </button>
       </header>
 
       <section className="contact-form">

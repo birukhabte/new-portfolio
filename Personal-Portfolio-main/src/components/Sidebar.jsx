@@ -108,13 +108,13 @@ const Sidebar = () => {
           className="download-resume-btn"
           onClick={(e) => {
             e.preventDefault();
-            fetch("/Biruk_Habte_CV_Fr.pdf")
+            fetch("/BirukCv_main%20(8).pdf")
               .then(res => res.blob())
               .then(blob => {
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = "BIruk_Habte_CV_Fr.pdf";
+                a.download = "BirukCv_main(8).pdf";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);

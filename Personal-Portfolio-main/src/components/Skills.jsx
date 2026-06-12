@@ -3,6 +3,22 @@ import { useState } from "react";
 const Skills = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
+  const handleDownloadResume = (e) => {
+    e.preventDefault();
+    fetch("/BirukCv_main%20(8).pdf")
+      .then(res => res.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "BirukCv_main(8).pdf";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      });
+  };
+
   const skillCategories = [
     {
       category: "Frontend",
@@ -80,8 +96,16 @@ const Skills = () => {
 
   return (
     <article className="skills">
-      <header>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 className="h2 article-title">Skills</h2>
+        <button
+          className="download-resume-btn"
+          onClick={handleDownloadResume}
+          style={{ marginTop: 0 }}
+        >
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download Resume</span>
+        </button>
       </header>
 
       <section className="skill-filters">

@@ -15,6 +15,16 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <li className="navbar-item">
           <button
             className={`navbar-link ${
+              activeSection === "Portfolio" ? "navbarActive" : ""
+            }`}
+            onClick={() => setActiveSection("Portfolio")}
+          >
+            Projects
+          </button>
+        </li>
+        <li className="navbar-item">
+          <button
+            className={`navbar-link ${
               activeSection === "Resume" ? "navbarActive" : ""
             }`}
             onClick={() => setActiveSection("Resume")}
@@ -30,16 +40,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             onClick={() => setActiveSection("Skills")}
           >
             Skills
-          </button>
-        </li>
-        <li className="navbar-item">
-          <button
-            className={`navbar-link ${
-              activeSection === "Portfolio" ? "navbarActive" : ""
-            }`}
-            onClick={() => setActiveSection("Portfolio")}
-          >
-            Projects
           </button>
         </li>
         <li className="navbar-item">

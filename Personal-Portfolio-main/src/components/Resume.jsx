@@ -1,13 +1,13 @@
 const Resume = () => {
   const handleDownloadResume = (e) => {
     e.preventDefault();
-    fetch("/BIruk_Habte_CV_Fr.pdf")
+    fetch("/BirukCv_main%20(8).pdf")
       .then(res => res.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = "BIruk_Habte_CV_Fr.pdf";
+        a.download = "BirukCv_main(8).pdf";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -72,11 +72,12 @@ const Resume = () => {
             <h5 className="h5 timeline-company">Qemer Software Technology PLC</h5>
             <span>09/2024 – 01/2025 | Addis Ababa</span>
             <p className="timeline-text">
-              Built scalable <strong>RESTful APIs using Node.js and Express.js</strong> (MERN stack). 
-              Designed and managed <strong>MongoDB</strong> databases with optimized data models. 
-              Implemented authentication and integrated third-party APIs. 
-              Collaborated with frontend developers to deliver seamless applications. 
-              Debugged and optimized performance while maintaining clean, maintainable code.
+              Worked as a Backend Developer specializing in the <strong>MERN stack</strong>, building scalable <strong>RESTful APIs</strong> and handling server-side logic. 
+              Designed and managed <strong>MongoDB</strong> databases, ensuring efficient data modeling, security, and optimization. 
+              Developed robust backend services using <strong>Node.js and Express.js</strong>, implemented authentication systems, and integrated third-party APIs. 
+              Collaborated closely with frontend developers using <strong>React</strong> to deliver seamless full-stack solutions. 
+              Focused on debugging, performance tuning, and maintaining clean, maintainable code. 
+              Used <strong>Redis</strong> for caching to improve API response times and reduce database load.
             </p>
           </li>
 
@@ -88,6 +89,8 @@ const Resume = () => {
               Built backend logic and database schemas using <strong>Next.js, Node.js, and Prisma ORM</strong>. 
               Implemented secure authentication and role-based access control. 
               Developed and integrated <strong>REST APIs</strong> with server-side rendering (SSR). 
+              Applied database indexing strategies to optimize query performance and reduce latency. 
+              Implemented caching to reduce redundant database queries and improve application speed. 
               Improved application performance, scalability, and code maintainability. 
               Collaborated using <strong>Git</strong> in an agile development environment.
             </p>
@@ -125,7 +128,7 @@ const Resume = () => {
               Bachelor of Science in Information Systems
             </h4>
             <h5 className="h5 timeline-company">Addis Ababa University</h5>
-            <span>2023 – 2026</span>
+            <span>2022 – 2025</span>
             <p className="timeline-text">
               Completed a comprehensive program covering software development, database management, 
               system analysis and design, web technologies, and information security. 

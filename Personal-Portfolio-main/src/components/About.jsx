@@ -1,10 +1,34 @@
 import { services } from "../lib/constant";
 
 const About = () => {
+  const handleDownloadResume = (e) => {
+    e.preventDefault();
+    fetch("/BirukCv_main%20(8).pdf")
+      .then(res => res.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "BirukCv_main(8).pdf";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      });
+  };
+
   return (
     <article className="about">
-      <header>
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 className="h2 article-title">About me</h2>
+        <button
+          className="download-resume-btn"
+          onClick={handleDownloadResume}
+          style={{ marginTop: 0 }}
+        >
+          <ion-icon name="download-outline"></ion-icon>
+          <span>Download Resume</span>
+        </button>
       </header>
       <section className="service">
         <h3 className="h3 service-title">What I'm doing</h3>
