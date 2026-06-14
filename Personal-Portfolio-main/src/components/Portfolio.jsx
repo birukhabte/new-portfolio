@@ -73,12 +73,11 @@ const Portfolio = () => {
 
   return (
     <article className="portfolio">
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <header className="section-header">
         <h2 className="h2 article-title">Portfolio</h2>
         <button
           className="download-resume-btn"
           onClick={handleDownloadResume}
-          style={{ marginTop: 0 }}
         >
           <ion-icon name="download-outline"></ion-icon>
           <span>Download Resume</span>

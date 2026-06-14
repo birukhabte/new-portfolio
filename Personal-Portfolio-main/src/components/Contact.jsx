@@ -62,12 +62,11 @@ const Contact = () => {
 
   return (
     <article className="contact">
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <header className="section-header">
         <h2 className="h2 article-title">Contact</h2>
         <button
           className="download-resume-btn"
           onClick={handleDownloadResume}
-          style={{ marginTop: 0 }}
         >
           <ion-icon name="download-outline"></ion-icon>
           <span>Download Resume</span>

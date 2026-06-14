@@ -480,17 +480,21 @@ article {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
 }
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: 16px;
-  padding: 20px 7px;
+  font-size: 14px;
+  padding: 20px 10px;
   transition: color var(--transition1);
   font-family: var(--ff-genos);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .navbar-link:hover,
@@ -2270,6 +2274,105 @@ textarea.form-input::-webkit-realizer {
   transition: width 0.3s ease;
 }
 
+
+/* ============================================
+   RESPONSIVE / SECTION HEADER
+   ============================================ */
+
+/* Section header (title + download button) — stacks on small screens */
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-header .download-resume-btn {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+/* Extra small phones: stack the header and let the button go full width */
+@media (max-width: 479px) {
+  main {
+    margin: 12px 10px;
+    margin-bottom: 80px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .section-header .article-title {
+    margin-bottom: 0;
+  }
+
+  .section-header .download-resume-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: var(--fs6);
+  }
+
+  /* Avatar/name should never overflow */
+  .info-content .name {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-info {
+    gap: 12px;
+  }
+
+  .avatar-box img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* Project tech badges adapt instead of forcing 3 columns */
+  .project-tech-stack {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+
+  /* Keep contact links from overflowing the card */
+  .contact-info :is(.contact-link, time, address) {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  /* Tighten navbar so all 5 items fit */
+  .navbar-link {
+    font-size: 13px;
+    padding: 18px 8px;
+  }
+
+  /* Skill cards: two-up on small phones */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+  }
+
+  .skill-icon,
+  .skill-icon ion-icon,
+  .skill-emoji {
+    font-size: 40px;
+  }
+}
+
+/* Prevent horizontal overflow globally */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
 
 /* Override skill name color to pure white */
 .skill-card .skill-name {
