@@ -11,18 +11,12 @@ const Portfolio = () => {
 
   const handleDownloadResume = (e) => {
     e.preventDefault();
-    fetch("/BirukCv_main%20(8).pdf")
-      .then(res => res.blob())
-      .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = "BirukCv_main(8).pdf";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-      });
+    const a = document.createElement('a');
+    a.href = "/Biruk_Habte_Senior_Resume%20(2).pdf";
+    a.download = "Biruk_Habte_Senior_Resume (2).pdf";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 
   const filteredProjects =
