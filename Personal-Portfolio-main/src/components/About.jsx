@@ -3,13 +3,13 @@ import { services } from "../lib/constant";
 const About = () => {
   const handleDownloadResume = (e) => {
     e.preventDefault();
-    fetch("/BirukCv_main%20(8).pdf")
+    fetch("/Biruk_Habte_Resume%20(3).pdf")
       .then(res => res.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = "BirukCv_main(8).pdf";
+        a.download = "Biruk_Habte_Resume (3).pdf";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

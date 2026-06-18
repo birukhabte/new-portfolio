@@ -866,6 +866,31 @@ article {
   text-align: justify;
 }
 
+ul.timeline-text {
+  list-style: disc;
+  margin-top: 7px;
+  padding-left: 18px;
+}
+
+ul.timeline-text li {
+  margin-bottom: 6px;
+}
+
+.see-more-btn {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text-green, var(--light-green));
+  font-size: var(--fs7);
+  font-weight: var(--fw500);
+  cursor: pointer;
+}
+
+.see-more-btn:hover {
+  text-decoration: underline;
+}
+
 /*SKILLS*/
 
 .skills-title {

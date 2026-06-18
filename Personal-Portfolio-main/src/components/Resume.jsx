@@ -1,13 +1,91 @@
+import { useState } from "react";
+
+const experiences = [
+  {
+    title: "Software Developer",
+    company: "Kuraz Technologies PLC",
+    period: "02/2023 – 08/2023 | Addis Ababa",
+    points: [
+      <>Developed and maintained full-stack web applications using <strong>React.js, Next.js, Node.js, and PostgreSQL</strong> within a microservices architecture.</>,
+      <>Led end-to-end database design: gathered data requirements, built the conceptual → logical → physical data models.</>,
+      <>Applied normalization (up to 3NF), and implemented indexing to balance integrity with query performance.</>,
+      <>Designed secure <strong>RESTful APIs</strong> with JWT authentication and RBAC, following OWASP security guidelines and secure coding best practices.</>,
+      <>Optimized application performance via <strong>Redis</strong> caching and PostgreSQL query tuning, achieving measurable reductions in server load.</>,
+      <>Supported Docker-based deployment pipelines and PM2 process management within CI/CD workflows.</>,
+    ],
+  },
+  {
+    title: "Backend Developer",
+    company: "Qemer Software Technology PLC",
+    period: "10/2023 – 06/2024 | Addis Ababa",
+    points: [
+      <>Built scalable <strong>MERN-stack RESTful APIs</strong> handling high-concurrency workloads, with Redis caching improving average API response time by 35%.</>,
+      <>Designed <strong>MongoDB</strong> schemas with optimized indexing and aggregation pipelines for efficient data retrieval across large datasets.</>,
+      <>Developed JWT-based authentication and integrated multiple third-party APIs including Chapa and Telebirr and notification services.</>,
+      <>Partnered with frontend React developers to deliver seamless full-stack features with minimal integration friction.</>,
+    ],
+  },
+  {
+    title: "Full-Stack Developer",
+    company: "Gasha Digital Technologies",
+    period: "07/2024 – 02/2025 | Addis Ababa",
+    points: [
+      <>Built and maintained full-stack web applications end-to-end with <strong>Next.js and Node.js</strong>, delivering SSR-powered pages for faster load times and improved SEO.</>,
+      <>Designed and implemented relational database schemas using <strong>Prisma ORM and MySQL</strong>, applying indexing strategies that reduced critical query latency.</>,
+      <>Optimized data delivery with Next.js caching, cutting redundant database queries and improving API throughput under peak load.</>,
+      <>Improved large-dataset performance through query optimization, pagination, and lazy loading, reducing initial page load and over-fetching.</>,
+      <>Developed and consumed <strong>RESTful APIs</strong>, integrating Next.js components with backend services for seamless data flow.</>,
+      <>Implemented RBAC and secure authentication flows, protecting sensitive application data across multiple user roles.</>,
+      <>Built responsive, accessible UIs with <strong>React and Tailwind CSS</strong>, translating design mockups into production-ready components.</>,
+      <>Maintained Git-based CI/CD workflows and collaborated in an agile team to ship features on schedule.</>,
+    ],
+  },
+  {
+    title: "Full-Stack Developer",
+    company: "Farka Digital Technologies",
+    period: "02/2025 – 03/2026 | Addis Ababa",
+    points: [
+      <>Architected and delivered enterprise web applications with <strong>NestJS, React, and TypeScript</strong>, through async processing and query optimization.</>,
+      <>Designed and enforced <strong>Zod</strong> schema validation across all API boundaries, eliminating a class of runtime type errors and improving data reliability.</>,
+      <>Defined API standards and architecture conventions adopted across the engineering team, improving consistency and maintainability.</>,
+      <>Mentored 2–3 junior developers through code reviews and pair programming, raising code quality and delivery speed.</>,
+      <>Led adoption of <strong>Redux Toolkit</strong> for centralized state management, reducing state-related bugs across complex multi-user workflows.</>,
+      <>Built a reusable, accessible UI component library adopted across 4 product modules, accelerating new-feature development and ensuring design consistency.</>,
+      <>Championed <strong>Docker</strong> containerization, standardizing dev/staging/production parity and reducing environment-related deployment issues to near zero.</>,
+      <>Collaborated directly with designers and product owners to translate business requirements into scalable technical solutions.</>,
+    ],
+  },
+  {
+    title: "Senior Freelance Full-Stack Developer",
+    company: "Self-Employed (Remote)",
+    period: "",
+    points: [
+      <>Delivered custom web applications for private clients using <strong>Laravel, React, Node.js, and TypeScript</strong>, consistently meeting deadlines and exceeding client expectations.</>,
+      <>Designed backend systems with secure authentication, role-based access, and third-party API integrations including payment and notification services.</>,
+      <>Managed full project lifecycle from requirements gathering and architecture design through deployment and post-launch support.</>,
+      <>Built responsive, accessible UIs using <strong>React/Next.js</strong> tailored to specific business requirements.</>,
+    ],
+  },
+];
+
+const VISIBLE_POINTS = 2;
+
 const Resume = () => {
+  const [expanded, setExpanded] = useState({});
+
+  const toggle = (index) => {
+    setExpanded((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
+
   const handleDownloadResume = (e) => {
     e.preventDefault();
-    fetch("/BirukCv_main%20(8).pdf")
+    fetch("/Biruk_Habte_Resume%20(3).pdf")
       .then(res => res.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = "BirukCv_main(8).pdf";
+        a.download = "Biruk_Habte_Resume (3).pdf";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -37,78 +115,34 @@ const Resume = () => {
         </div>
 
         <ol className="timeline-list">
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Full Stack Developer (Remote & Freelance / Private Clients)</h4>
-            <h5 className="h5 timeline-company">Self-Employed</h5>
-            <span>05/2024 – Present</span>
-            <p className="timeline-text">
-              Develop full-stack web applications using <strong>Laravel, React, Node.js, and TypeScript</strong>. 
-              Design and implement <strong>RESTful APIs</strong> for scalable systems. 
-              Build custom solutions based on client requirements. 
-              Create responsive user interfaces with <strong>React / Next.js</strong>. 
-              Implement secure back-end systems, including authentication and database design. 
-              Integrate third-party services such as payment gateways and external APIs. 
-              Optimize performance, debug issues, and maintain application reliability. 
-              Manage client communication, project delivery, and ongoing support.
-            </p>
-          </li>
+          {experiences.map((exp, index) => {
+            const isExpanded = expanded[index];
+            const visiblePoints = isExpanded
+              ? exp.points
+              : exp.points.slice(0, VISIBLE_POINTS);
+            const hasMore = exp.points.length > VISIBLE_POINTS;
 
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Junior Full Stack Developer (Internship)</h4>
-            <h5 className="h5 timeline-company">SWENETIX TECH</h5>
-            <span>01/2024 – 03/2024 | Addis Ababa</span>
-            <p className="timeline-text">
-              Developed responsive web applications using <strong>TypeScript and PHP</strong>. 
-              Built and integrated <strong>APIs</strong> for front-end and back-end communication. 
-              Contributed to both UI development and server-side logic. 
-              Collaborated with a team on real-world projects. 
-              Gained hands-on experience in full-stack development and best practices.
-            </p>
-          </li>
-
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Backend Developer</h4>
-            <h5 className="h5 timeline-company">Qemer Software Technology PLC</h5>
-            <span>09/2024 – 01/2025 | Addis Ababa</span>
-            <p className="timeline-text">
-              Worked as a Backend Developer specializing in the <strong>MERN stack</strong>, building scalable <strong>RESTful APIs</strong> and handling server-side logic. 
-              Designed and managed <strong>MongoDB</strong> databases, ensuring efficient data modeling, security, and optimization. 
-              Developed robust backend services using <strong>Node.js and Express.js</strong>, implemented authentication systems, and integrated third-party APIs. 
-              Collaborated closely with frontend developers using <strong>React</strong> to deliver seamless full-stack solutions. 
-              Focused on debugging, performance tuning, and maintaining clean, maintainable code. 
-              Used <strong>Redis</strong> for caching to improve API response times and reduce database load.
-            </p>
-          </li>
-
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Full Stack Developer</h4>
-            <h5 className="h5 timeline-company">Gasha Digital Technologies</h5>
-            <span>06/2025 – 11/2025 | Addis Ababa</span>
-            <p className="timeline-text">
-              Built backend logic and database schemas using <strong>Next.js, Node.js, and Prisma ORM</strong>. 
-              Implemented secure authentication and role-based access control. 
-              Developed and integrated <strong>REST APIs</strong> with server-side rendering (SSR). 
-              Applied database indexing strategies to optimize query performance and reduce latency. 
-              Implemented caching to reduce redundant database queries and improve application speed. 
-              Improved application performance, scalability, and code maintainability. 
-              Collaborated using <strong>Git</strong> in an agile development environment.
-            </p>
-          </li>
-
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Full Stack Developer</h4>
-            <h5 className="h5 timeline-company">Farka Digital Technologies</h5>
-            <span>12/2025 – 03/2026 | Addis Ababa</span>
-            <p className="timeline-text">
-              Created and improved enterprise web applications leveraging <strong>NestJS, React, and TypeScript</strong>.
-              Implemented centralized state management with <strong>Redux Toolkit</strong> for better app performance and complex frontend logic.
-              Used <strong>Zod</strong> for schema validation and type-safety to minimize runtime errors and make forms more reliable.
-              Designed reusable UI components and responsive interfaces ensuring consistent user experience on all devices.
-              Implemented containerization using <strong>Docker</strong> for easier development, testing, and deployment.
-              Connected backend services, third-party APIs, and external systems to facilitate company operations.
-              Worked with designers, product owners, and fellow developers to create features per business needs.
-            </p>
-          </li>
+            return (
+              <li className="timeline-item" key={index}>
+                <h4 className="h4 timeline-item-title">{exp.title}</h4>
+                <h5 className="h5 timeline-company">{exp.company}</h5>
+                {exp.period && <span>{exp.period}</span>}
+                <ul className="timeline-text">
+                  {visiblePoints.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
+                {hasMore && (
+                  <button
+                    className="see-more-btn"
+                    onClick={() => toggle(index)}
+                  >
+                    {isExpanded ? "See less" : "See more"}
+                  </button>
+                )}
+              </li>
+            );
+          })}
         </ol>
       </section>
 
@@ -129,8 +163,8 @@ const Resume = () => {
             <h5 className="h5 timeline-company">Addis Ababa University</h5>
             <span>2022 – 2025</span>
             <p className="timeline-text">
-              Completed a comprehensive program covering software development, database management, 
-              system analysis and design, web technologies, and information security. 
+              Completed a comprehensive program covering software development, database management,
+              system analysis and design, web technologies, and information security.
               Gained strong foundation in programming, data structures, algorithms, and modern development practices.
             </p>
           </li>
