@@ -111,7 +111,7 @@ const Resume = () => {
               Bachelor of Science in Information Systems
             </h4>
             <h5 className="h5 timeline-company">Addis Ababa University</h5>
-            <span>2024</span>
+            <span></span>
             <p className="timeline-text">
               Completed a comprehensive program covering software development, database management, 
               system analysis and design, web technologies, and information security. 
