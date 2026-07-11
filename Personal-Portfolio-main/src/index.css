@@ -859,6 +859,14 @@ article {
   font-weight: var(--fw300);
   line-height: 1.6;
   text-align: justify;
+  margin-bottom: 10px;
+}
+
+.timeline-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 /*SKILLS*/

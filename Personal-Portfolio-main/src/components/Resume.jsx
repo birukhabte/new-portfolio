@@ -1,13 +1,13 @@
 const Resume = () => {
   const handleDownloadResume = (e) => {
     e.preventDefault();
-    fetch("/fresume_updated.pdf")
+    fetch("/FBiruk_Habte.pdf")
       .then(res => res.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = "fresume_updated.pdf";
+        a.download = "FBiruk_Habte.pdf";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
@@ -18,7 +18,7 @@ const Resume = () => {
   return (
     <article className="resume">
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h2 className="h2 article-title">Resume</h2>
+        <h2 className="h2 article-title">Experience</h2>
         <button
           className="download-resume-btn"
           onClick={handleDownloadResume}
@@ -28,69 +28,49 @@ const Resume = () => {
           <span>Download Resume</span>
         </button>
       </header>
+
       <section className="timeline">
         <div className="title-wrapper">
           <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+            <ion-icon name="briefcase-outline"></ion-icon>
           </div>
-
-          <h3 className="h3">Experience</h3>
+          <h3 className="h3">Work Experience</h3>
         </div>
 
         <ol className="timeline-list">
           <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Full Stack Developer (Remote & Freelance / Private Clients)</h4>
-            <h5 className="h5 timeline-company">Self-Employed</h5>
-            <span>05/2024 – Present</span>
-            <p className="timeline-text">
-              Develop full-stack web applications using Laravel, React, Node.js, and TypeScript. 
-              Design and implement RESTful APIs for scalable systems. 
-              Build custom solutions based on client requirements. 
-              Create responsive user interfaces with React / Next.js. 
-              Implement secure back-end systems, including authentication and database design. 
-              Integrate third-party services such as payment gateways and external APIs. 
-              Optimize performance, debug issues, and maintain application reliability. 
-              Manage client communication, project delivery, and ongoing support.
-            </p>
-          </li>
-
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Junior Full Stack Developer (Internship)</h4>
-            <h5 className="h5 timeline-company">SWENETIX TECH</h5>
-            <span>01/2024 – 03/2024 | Addis Ababa</span>
-            <p className="timeline-text">
-              Developed responsive web applications using TypeScript and PHP. 
-              Built and integrated APIs for front-end and back-end communication. 
-              Contributed to both UI development and server-side logic. 
-              Collaborated with a team on real-world projects. 
-              Gained hands-on experience in full-stack development and best practices.
-            </p>
-          </li>
-
-          <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Backend Developer</h4>
+            <h4 className="h4 timeline-item-title">Backend Developer (Internship)</h4>
             <h5 className="h5 timeline-company">Qemer Software Technology PLC</h5>
-            <span>09/2024 – 01/2025 | Addis Ababa</span>
+            <span>Jul 2025 – Aug 2025</span>
             <p className="timeline-text">
-              Built scalable RESTful APIs using Node.js and Express.js (MERN stack). 
-              Designed and managed MongoDB databases with optimized data models. 
-              Implemented authentication and integrated third-party APIs. 
-              Collaborated with frontend developers to deliver seamless applications. 
-              Debugged and optimized performance while maintaining clean, maintainable code.
+              Developed and maintained backend services for an e-commerce platform using Node.js, Express.js, and MongoDB.
+              Built secure RESTful APIs for authentication, products, orders, carts, and user management.
+              Implemented JWT authentication, role-based access control, and optimized database performance.
+              Collaborated with frontend developers to integrate APIs and deliver scalable, high-performance applications.
             </p>
+            <div className="timeline-tech-stack">
+              {["Node.js", "Express.js", "MongoDB", "Mongoose", "React", "JWT", "REST APIs", "Git", "Postman"].map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
           </li>
 
           <li className="timeline-item">
-            <h4 className="h4 timeline-item-title">Full Stack Developer</h4>
-            <h5 className="h5 timeline-company">Gasha Digital Technologies</h5>
-            <span>06/2025 – 11/2025 | Addis Ababa</span>
+            <h4 className="h4 timeline-item-title">Full-Stack Developer Intern</h4>
+            <h5 className="h5 timeline-company">Efuye Gela</h5>
+            <span>Sep 2024 – Jan 2025</span>
             <p className="timeline-text">
-              Built backend logic and database schemas using Next.js, Node.js, and Prisma ORM. 
-              Implemented secure authentication and role-based access control. 
-              Developed and integrated REST APIs with server-side rendering (SSR). 
-              Improved application performance, scalability, and code maintainability. 
-              Collaborated using Git in an agile development environment.
+              Developed and maintained full-stack web applications using Next.js, Express.js, and Supabase.
+              Built and integrated secure RESTful APIs, authentication, and database operations with Supabase PostgreSQL.
+              Implemented pagination, database indexing, and caching strategies to improve query efficiency and application performance.
+              Optimized backend services by reducing response times and improving scalability through efficient database queries and API performance tuning.
+              Collaborated with senior developers on feature development, bug fixes, code reviews, testing, and version control using Git.
             </p>
+            <div className="timeline-tech-stack">
+              {["Next.js", "React", "Node.js", "Express.js", "Supabase", "PostgreSQL", "TypeScript", "Git"].map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
           </li>
         </ol>
       </section>
@@ -98,9 +78,85 @@ const Resume = () => {
       <section className="timeline">
         <div className="title-wrapper">
           <div className="icon-box">
-            <ion-icon name="book-outline"></ion-icon>
+            <ion-icon name="code-slash-outline"></ion-icon>
           </div>
+          <h3 className="h3">Projects</h3>
+        </div>
 
+        <ol className="timeline-list">
+          <li className="timeline-item">
+            <h4 className="h4 timeline-item-title">School Management System</h4>
+            <h5 className="h5 timeline-company">Private Client</h5>
+            <p className="timeline-text">
+              Developed a full-stack School Management System for Ethiopian schools with dedicated Admin, Teacher, Student, and Parent web portals.
+              Built secure RESTful APIs with JWT authentication, role-based access control (RBAC), real-time communication, and file upload capabilities.
+              Developed modules for student registration, attendance, examinations, grade management, fee collection, payroll, communication, and reporting.
+              Integrated the Chapa payment gateway, PDF report generation, real-time notifications, Redis caching, and Docker-based deployment.
+            </p>
+            <div className="timeline-tech-stack">
+              {["Node.js", "Express.js", "TypeScript", "Prisma ORM", "MySQL", "Next.js", "React", "Tailwind CSS", "Socket.IO", "Redis", "JWT", "Docker", "Swagger", "Chapa API"].map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
+          </li>
+
+          <li className="timeline-item">
+            <h4 className="h4 timeline-item-title">PharmaCare – Pharmacy Management System</h4>
+            <h5 className="h5 timeline-company">Personal Project</h5>
+            <p className="timeline-text">
+              Designed and developed a full-stack Pharmacy Management System to streamline medicine inventory, sales, purchases, prescriptions, customer management, and supplier management.
+              Built secure RESTful APIs and implemented role-based access control (RBAC) for Head Pharmacist, Counter Staff, and Inventory Manager.
+              Implemented inventory management with batch tracking, expiry alerts, purchase order processing, and audit logging.
+              Developed an interactive dashboard with real-time sales analytics, top-selling medicines, key performance indicators (KPIs), and notifications.
+            </p>
+            <div className="timeline-tech-stack">
+              {["Next.js 14", "React 19", "TypeScript", "Node.js", "Express.js", "MongoDB", "Mongoose", "Vercel", "Render"].map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
+          </li>
+
+          <li className="timeline-item">
+            <h4 className="h4 timeline-item-title">PowerLink Ethiopia – Electrical Utility Management System</h4>
+            <h5 className="h5 timeline-company">Personal Project</h5>
+            <p className="timeline-text">
+              Engineered a scalable full-stack platform using Node.js, Express.js, PostgreSQL, React, and React Native to modernize electrical utility service management.
+              Implemented Role-Based Access Control (RBAC) for five user roles: Admin, Customer, Business, Supervisor, and Technician.
+              Developed modules for service requests, new electricity connections, outage management, customer profiles, announcements, and administrative dashboards.
+              Integrated Socket.io for real-time chat and notifications, JWT authentication with bcryptjs, secure file uploads with Multer, email notifications with Nodemailer, and online payments through the Chapa Payment Gateway.
+              Designed a scalable backend architecture with PostgreSQL, Docker-ready deployment, and Supabase migration support for maintainability and performance.
+            </p>
+            <div className="timeline-tech-stack">
+              {["Node.js", "Express.js", "PostgreSQL", "React", "React Native", "Socket.io", "JWT", "Docker", "Supabase"].map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
+          </li>
+
+          <li className="timeline-item">
+            <h4 className="h4 timeline-item-title">Car Rental Management System</h4>
+            <h5 className="h5 timeline-company">Academic Project</h5>
+            <p className="timeline-text">
+              Designed and developed a full-stack Car Rental Management System using PHP, MySQL, HTML, CSS, JavaScript, and Bootstrap.
+              Designed the database through conceptual, logical, and physical modeling, applying normalization up to Third Normal Form (3NF) to ensure data integrity and reduce redundancy.
+              Developed modules for vehicle management, customer registration, booking, rental processing, and payment records.
+              Built secure CRUD operations, user authentication, and responsive user interfaces.
+              Collaborated with team members across the full software development lifecycle, from requirements analysis to testing and deployment.
+            </p>
+            <div className="timeline-tech-stack">
+              {["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"].map((tech, i) => (
+                <span key={i} className="tech-badge">{tech}</span>
+              ))}
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section className="timeline">
+        <div className="title-wrapper">
+          <div className="icon-box">
+            <ion-icon name="school-outline"></ion-icon>
+          </div>
           <h3 className="h3">Education</h3>
         </div>
 
@@ -110,11 +166,11 @@ const Resume = () => {
               Bachelor of Science in Information Systems
             </h4>
             <h5 className="h5 timeline-company">Addis Ababa University</h5>
-            <span>2023 – 2026</span>
+            <span>2026</span>
             <p className="timeline-text">
-              Completed a comprehensive program covering software development, database management, 
-              system analysis and design, web technologies, and information security. 
-              Gained strong foundation in programming, data structures, algorithms, and modern development practices.
+              Completed a comprehensive program covering software development, database management,
+              system analysis and design, web technologies, and information security.
+              Gained a strong foundation in programming, data structures, algorithms, and modern development practices.
             </p>
           </li>
         </ol>

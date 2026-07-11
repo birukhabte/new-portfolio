@@ -10,8 +10,8 @@ const MobileContacts = () => {
           </div>
           <div className="contact-info">
             <p className="contact-title">Email</p>
-            <a href="mailto:raro@example.com" className="contact-link">
-              habtebiruk13@gmail.com
+            <a href="mailto:birukhabte2706@gmail.com" className="contact-link">
+              birukhabte2706@gmail.com
             </a>
           </div>
         </li>

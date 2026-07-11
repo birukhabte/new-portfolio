@@ -58,8 +58,8 @@ const Sidebar = () => {
             </div>
             <div className="contact-info">
               <p className="contact-title">Email</p>
-              <a href="mailto:raro@example.com" className="contact-link">
-               habtebiruk13@gmail.com
+              <a href="mailto:birukhabte2706@gmail.com" className="contact-link">
+               birukhabte2706@gmail.com
               </a>
             </div>
           </li>
@@ -108,13 +108,13 @@ const Sidebar = () => {
           className="download-resume-btn"
           onClick={(e) => {
             e.preventDefault();
-            fetch("/fresume_updated.pdf")
+            fetch("/FBiruk_Habte.pdf")
               .then(res => res.blob())
               .then(blob => {
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = "fresume_updated.pdf";
+                a.download = "FBiruk_Habte.pdf";
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
